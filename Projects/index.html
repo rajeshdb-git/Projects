@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+   
+    <!-- <style>
+ *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Poppins,sans-serif;
+
+    background:
+    linear-gradient(
+        135deg,
+        #050505,
+        #1a001f,
+        #2e003e
+    );
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+
+
+
+header{
+
+    width:100%;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    z-index:1000;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 8%;
+
+    background:rgba(10,10,20,0.5);
+
+    backdrop-filter:blur(20px);
+
+   
+}
+
+.logo h1{
+
+    font-size:2.3rem;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    color:#ffffff;
+}
+
+.nav{
+
+    display:flex;
+
+    gap:18px;
+
+    list-style:none;
+}
+
+.a{
+
+    padding:12px 22px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:transparent;
+
+    color:#d4d4d8;
+
+    font-size:15px;
+
+    font-weight:500;
+
+    
+
+    transition:0.4s;
+}
+
+.a:hover{
+
+    background:#c084fc;
+
+    color:white;
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 25px #c084fc88;
+}
+
+
+
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:150px 8%;
+
+    gap:50px;
+}
+
+.hero-text{
+
+    flex:1;
+}
+
+.hero-text h2{
+
+    font-size:2rem;
+
+    color:#c084fc;
+
+    margin-bottom:10px;
+}
+
+.hero-text h1{
+
+    font-size:5rem;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+}
+
+.hero-text h3{
+
+    font-size:2rem;
+
+    color:#d4d4d8;
+
+    margin-bottom:20px;
+}
+
+.hero-text p{
+
+    font-size:1.1rem;
+
+    line-height:1.8;
+
+    color:#a1a1aa;
+
+    width:80%;
+
+    margin-bottom:35px;
+}
+
+.hero-text button{
+
+    padding:16px 35px;
+
+    border:none;
+
+    border-radius:14px;
+
+    background:#c084fc;
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.4s;
+}
+
+.hero-text button:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 35px #c084fc99;
+}
+
+
+.hero-image{
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+}
+
+.hero-image img{
+
+    width:500px;
+    height: 500px;
+    
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 50px rgba(192,132,252,0.3);
+
+    transition:0.5s;
+    background-color: #c084fc;
+}
+
+.hero-image img:hover{
+
+    transform:scale(1.03);
+}
+.about{
+    padding: 80px 10%;
+    
+}
+
+.about-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-image img{
+    width: 350px;
+      border-radius: 50%;
+    background-color: black;
+}
+
+.about-text h2{
+    margin-bottom: 20px;
+    font-size: 35px;
+}
+
+.about-text p{
+    font-size: 18px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+ *{
+    font-family:Arial, Helvetica, sans-serif
+ }
+ .title{
+    color: white;
+    font-size:5rem;
+
+    font-weight:800;
+
+    margin-bottom:20px;
+}
+.about-stats{
+    display:flex;
+    justify-content: space-between;
+    background-color:rgb(193, 181, 181,0.5);
+    padding: 20px;
+    border-radius:100px;
+}
+.resume{
+    height: 50px;
+    width: 200px;
+    background-color: #c084fc;
+    color: white;
+    margin-top: 5px;
+    border-radius: 20px;
+    font-size: 20px;
+    
+}
+.skills{
+    padding: 80px 10%;
+    
+}
+
+.skill-container{
+    display: grid;
+    grid-template-columns: repeat(4,9fr);
+    gap: 30px;
+}
+
+.skill-card{
+    color: #050505;
+    background-color: white;
+    padding: 40px;
+    text-align: center;
+    border-radius: 30px;
+    font-size: 22px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.skill-card:hover{
+    transform: translateY(-10px);
+    background-color:#c084fc;
+    color: white;
+}
+
+
+
+/* projects */
+
+.projects{
+    padding: 80px 10%;
+    color: #050505;
+    
+}
+
+.project-container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 30px;
+}
+
+.project-card{
+    
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.project-card:hover{
+    transform: scale(1.03);
+}
+
+.project-card img{
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.project-content{
+    padding: 20px;
+}
+
+.project-content h2{
+    margin-bottom: 10px;
+}
+
+.project-content p{
+    line-height: 28px;
+}
+/* contact */
+.contact{
+    padding: 80px 10%;
+}
+
+form{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form input,
+form textarea{
+    padding: 15px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button{
+    padding: 15px;
+    border: none;
+    background-color: #c084fc;
+    color: white;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+  footer{
+            
+            margin-top: 150px;
+            height: 100px;
+            width: 100%;
+            color: aliceblue;
+            background:#b77bf4;
+            align-items: center;
+            display: flex;
+            justify-content:center;
+            font-size: 20px;
+            width:100%; 
+            justify-content: space-around;
+            
+            
+
+
+            }
+    .fo{
+        display: flex;
+        gap: 20px;
+    }
+ 
+    
+
+    
+    </style> -->
+</head>
+<body>
+    <header>
+        <div class="logo"><h1>RAJESH</h1></div>
+        <ul class="nav" type="none">
+           <li><a href="#home" class="a" >HOME</a></li>
+             <li><a href="#about" class="a" >ABOUT</a></li>
+            <li><a href="#skills" class="a" >SKILLS</a></li>
+            <li><a href="#projects" class="a" >PROJECTS</a></li>
+            <li><a href="#contact" class="a" >CONTACT</a></li>
+           
+            <li><a href="#EXPERIENCE" class="a" >EXPERIENCE</a></li>
+        </ul>
+    </header>
+     <section class="hero" id="home">
+        <div class="hero-text">
+            <h2>Hello, I'm</h2>
+            <h1>Rajesh DB</h1>
+            <h3>Python Web Developer</h3>
+            <p>
+                I create responsive websites using HTML, CSS, Python, and Django.
+            </p>
+
+            <button>Hire Me</button>
+        </div>
+
+        <div class="hero-image">
+        <img src="pic.png" alt="profile">
+
+        </div>
+    </section>
+      <section class="about" id="about">
+       
+        
+       
+
+        <div class="about-container">
+            
+            
+
+            <div class="about-text">
+                <H1 class="title">ABOUT</H1>
+                <br>
+            
+
+            <h1>
+                Passionate Python Full Stack Developer
+                & AI/ML Enthusiast
+            </h1>
+
+            <p>
+                I am a highly motivated Python Full Stack Developer
+                passionate about building modern, scalable, and
+                user-friendly web applications with premium UI/UX experiences.
+            </p>
+
+            <p>
+                My expertise includes Python, Django, Flask,
+                FastAPI, HTML, CSS, JavaScript, React, SQL,
+                and AI/ML technologies.
+            </p>
+
+            <p>
+                I enjoy creating futuristic digital products,
+                intelligent systems, and visually immersive websites
+                inspired by modern Silicon Valley startup designs.
+            </p>
+            
+          
+            <div class="about-stats">
+            
+                <div class="stat">
+                    <h3><span>Projects</span>: 10+</h3>
+                    
+                </div>
+
+                <div class="stat">
+                    <h3><span>Technologies</span>: 5+</h3> 
+                </div>
+
+                <div class="stat">
+                    <h3><span>Coding Hours</span>: 1000+ </h3>
+                    
+                </div>
+
+            </div>
+           
+            
+            <button class="resume">Download Resume</button>
+            
+            </div>
+
+        </div>
+    </section>
+    <section class="skills" id="skills">
+        
+        <H1 class="title">SKILLS</H1>
+
+        <div class="skill-container">
+            <div class="skill-card">HTML</div>
+            <div class="skill-card">CSS</div>
+            <div class="skill-card">JavaScript</div>
+            <div class="skill-card">Python</div>
+            <div class="skill-card">Django</div>
+            <div class="skill-card">SQL</div>
+            <div class="skill-card">Pandas</div>
+            <div class="skill-card">Machine Learning</div>
+            <div class="skill-card">Oops</div>
+        </div>
+    </section>
+
+    <section class="projects" id="projects">
+        <h6 class="title">PROJECTS</h6>
+        
+
+        <div class="project-container">
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" alt="project">
+
+                <div class="project-content">
+                    <h2>E-Commerce Website</h2>
+                    <p>
+                        Responsive shopping website using HTML, CSS, JavaScript and Django.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop" alt="project">
+
+                <div class="project-content">
+                    <h2>Data Analytics Dashboard</h2>
+                    <p>
+                        Dashboard created using Python, Pandas and Matplotlib.
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop" alt="project">
+
+                <div class="project-content">
+                    <h2>Portfolio Website</h2>
+                    <p>
+                        Personal portfolio website with responsive design.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+     <section class="contact" id="contact">
+        <h1 class="title">CONTACT</h1>
+
+        <form>
+            <input type="text" placeholder="Enter Your Name">
+            <input type="email" placeholder="Enter Your Email">
+            <textarea rows="6" placeholder="Enter Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+
+
+    <!-- EXPERIENCE -->
+     <section class="projects" id="EXPERIENCE">
+        <h6 class="title">EXPERIENCE</h6>
+        
+
+        <div class="project-container">
+
+            <div class="project-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9ibr6Wwe0an456T0KWaWKpcBYJoGRzd3IaFciyDcLtQ&s=10" alt="project">
+
+                <div class="project-content">
+                    <h2>Machine	Learning Intern - Intrainz Innovation Private Limited</h2>
+                    <p>
+                        <ul>
+                            <li><h3>Duration </h3></li>
+                            <li>Worked with machine learning algorithms such as regression,Clustering</li>
+                            <li>Performed data preprocessing, including handling missing values and feature scaling</li>
+                            <li>Built models to solve real-world prediction problems</li>
+                        </ul>        
+            </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <a href="https://pubs.aip.org/aip/acp/article-abstract/3427/1/020010/3392426/FORTIFYX-The-Warrior-s-sentinel?redirectedFrom=fulltext">                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2Ycm4We1VRCEEgxZ1_EUQF1nZyubi4KpEu8o1VhafTA&s=10" alt="project">
+</a>
+
+                <div class="project-content">
+                    <h2>Embedded Systems Intern - Take It Smart	Pvt.Ltd</h2>
+                    <p>
+                        <ul>
+                            <li> Worked on embedded system programming for IoT applications</li>
+                            <li>Developed simple IoT projects using sensors and microcontrollers for real-time data acquisition</li>
+                            <li>Gained exposure to automation and real-world IoT applications</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh2_4_6t-fIRnpZR9PUcCSWc89kySDpsqvPFv6mm033w&s=10" alt="project">
+
+                <div class="project-content">
+                    <h2>Machine	Learning Engineer Intern - Rooman Technologies Pvt. Ltd</h2>
+                    <p>
+                        <ul>
+                            <li>  Completed 480 hours of certified AI/ML training under Electronics Sector Skills Council of India and National Council for
+Vocational Education and Training</li>
+                            <li>Gained hands-on experience in AI/ML concepts, model building, and real-time applications</li>
+                            <li> Achieved NSQF Level 5 certification with Grade A (16 credits)</li>
+                        </ul>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer>
+       
+            <h4>@2026 RAJESH PORTFOLIO</h4>
+            <ul type="none" class="fo">
+                <li><a href=""><i class="fa-brands fa-whatsapp"></i> WHATS'APP</li></a>
+                <li><a href=""><i class="fa-brands fa-instagram"></i> INSTAGRAM</a></li>
+                <li><a href=""><i class="fa-regular fa-envelope"></i> GMAIL</a></li>
+                <li><a href="https://github.com/Rajesh22262"><i class="fa-brands fa-square-github"></i> GITHUB</a></li>
+            </ul>
+
+       
+    </footer>
+    
+   
+    
+</body>
+</html>
