@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Portfolio Website</title>
     <link rel="stylesheet" href="style.css">
-   
+    <script src="script.js" defer></script>
+   <link rel="icon" href="icon1.png">
     <!-- <style>
  *{
     margin:0;
@@ -449,7 +450,7 @@ html{
                 I create responsive websites using HTML, CSS, Python, and Django.
             </p>
 
-            <button>Hire Me</button>
+            <button type="button" class="hire-button">Hire Me</button>
         </div>
 
         <div class="hero-image">
@@ -514,7 +515,7 @@ html{
             </div>
            
             
-            <button class="resume">Download Resume</button>
+            <a class="resume" href="./Python%20Full-Stack%20Developer%20.pdf" download="Rajesh-DB-Resume.pdf" target="_blank" rel="noopener" aria-label="Download Rajesh DB resume as a PDF">Download Resume</a>
             
             </div>
 
@@ -566,10 +567,12 @@ html{
             </div>
 
             <div class="project-card">
-                <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop" alt="project">
+                <a href="http://127.0.0.1:5500/index.html" target="_blank" rel="noopener" aria-label="Open Portfolio Website project">
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1000&auto=format&fit=crop" alt="Portfolio Website project">
+                </a>
 
                 <div class="project-content">
-                    <h2>Portfolio Website</h2>
+                    <h2><a href="http://127.0.0.1:5500/index.html" target="_blank" rel="noopener" class="proj-port">Portfolio Website</a></h2>
                     <p>
                         Personal portfolio website with responsive design.
                     </p>
@@ -582,12 +585,13 @@ html{
      <section class="contact" id="contact">
         <h1 class="title">CONTACT</h1>
 
-        <form>
-            <input type="text" placeholder="Enter Your Name">
-            <input type="email" placeholder="Enter Your Email">
-            <textarea rows="6" placeholder="Enter Your Message"></textarea>
+        <form id="contact-form" novalidate>
+            <input type="text" name="name" placeholder="Enter Your Name" autocomplete="name" required>
+            <input type="email" name="email" placeholder="Enter Your Email" autocomplete="email" required>
+            <textarea name="message" rows="6" placeholder="Enter Your Message" required></textarea>
             <button type="submit">Send Message</button>
         </form>
+        <p class="form-status" role="status" aria-live="polite"></p>
     </section>
 
 
@@ -632,7 +636,9 @@ html{
             </div>
 
             <div class="project-card">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh2_4_6t-fIRnpZR9PUcCSWc89kySDpsqvPFv6mm033w&s=10" alt="project">
+                <a href="./Certificates.pdf" target="_blank" rel="noopener" aria-label="Open Rooman Technologies certificate">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh2_4_6t-fIRnpZR9PUcCSWc89kySDpsqvPFv6mm033w&s=10" alt="Open Rooman Technologies certificate">
+                </a>
 
                 <div class="project-content">
                     <h2>Machine	Learning Engineer Intern - Rooman Technologies Pvt. Ltd</h2>
@@ -669,10 +675,10 @@ Vocational Education and Training</li>
        
             <h4>@2026 RAJESH PORTFOLIO</h4>
             <ul type="none" class="fo">
-                <li><a href=""><i class="fa-brands fa-whatsapp"></i> WHATS'APP</li></a>
+                <li><a href="https://wa.me/917204750258" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WHATS'APP</a></li>
                 <li><a href=""><i class="fa-brands fa-instagram"></i> INSTAGRAM</a></li>
-                <li><a href=""><i class="fa-regular fa-envelope"></i> GMAIL</a></li>
-                <li><a href="https://github.com/Rajesh22262"><i class="fa-brands fa-square-github"></i> GITHUB</a></li>
+                <li><a href="mailto:rajeshrajeshdb12@gmail.com"><i class="fa-regular fa-envelope"></i> GMAIL</a></li>
+                <li><a href="https://github.com/rajeshdb-git/" target="_blank" rel="noopener"><i class="fa-brands fa-square-github"></i> GITHUB</a></li>
             </ul>
 
        
