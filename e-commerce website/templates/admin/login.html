@@ -1,0 +1,4 @@
+{% load static %}
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Admin Login</title><link rel="stylesheet" href="{% static 'css/admin.css' %}"></head>
+<body class="admin-login-page"><section class="login-panel"><p class="admin-kicker">Brand_name / Admin</p><h1>Welcome back</h1><p>Sign in to manage your store.</p>{% if messages %}{% for message in messages %}<div class="flash error">{{ message }}</div>{% endfor %}{% endif %}<form method="post">{% csrf_token %}<label>Username<input name="username" required autofocus></label><label>Password<input name="password" type="password" required></label><button class="primary-button" type="submit">Login</button></form><a href="/">Back to store</a></section></body></html>

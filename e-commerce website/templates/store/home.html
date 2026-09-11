@@ -1,0 +1,104 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brand_name</title>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  <script src="{% static 'js/profile-menu.js' %}" defer></script>
+  <script src="{% static 'js/products.js' %}" defer></script>
+</head>
+<body class="shop-page">
+  <header class="shop-navbar">
+    <a class="shop-logo" href="{% url 'home' %}" aria-label="Brand_name home">
+      <span class="logo-mark">Brand_name</span>
+    </a>
+
+    <nav class="shop-nav-links" aria-label="Shop categories">
+      <a href="#men">Men</a>
+      <a href="#women">Women</a>
+      <a href="#kids">Kids</a>
+      <a href="#home">Home</a>
+      <a href="#beauty">Beauty</a>
+      <a href="#genz">Genz</a>
+      <a class="studio-link" href="#studio">Studio <span>New</span></a>
+    </nav>
+
+    <form class="shop-search" role="search">
+      <span class="search-icon" aria-hidden="true"></span>
+      <input type="search" placeholder="Search for products, brands and more" aria-label="Search for products, brands and more">
+    </form>
+
+    <div class="shop-actions">
+      <div class="profile-menu">
+        <button class="shop-action profile-trigger" type="button" aria-expanded="false" aria-controls="profile-dropdown">
+        <span class="action-icon profile-icon" aria-hidden="true"></span>
+        <span>Profile</span>
+        </button>
+        <div class="profile-dropdown" id="profile-dropdown" hidden>
+        {% if customer_name %}
+          <p class="profile-title">Hello {{ customer_name }}</p>
+          <p class="profile-phone">{{ customer_phone }}</p>
+          <div class="profile-links profile-links-primary">
+            <a href="{% url 'orders' %}">Orders</a>
+            <a href="{% url 'wishlist' %}">Wishlist</a>
+            <a href="{% url 'gift-cards' %}">Gift Cards</a>
+            <a href="{% url 'contact-us' %}">Contact Us</a>
+          </div>
+          <form class="logout-form" method="post" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+          </form>
+        {% else %}
+          <p class="profile-title">Welcome</p>
+          <p class="profile-description">To access account and manage orders</p>
+          <a class="login-button" href="{% url 'login' %}">LOGIN / SIGNUP</a>
+          <div class="profile-links profile-links-primary">
+            <a href="{% url 'orders' %}">Orders</a>
+            <a href="{% url 'wishlist' %}">Wishlist</a>
+            <a href="{% url 'gift-cards' %}">Gift Cards</a>
+            <a href="{% url 'contact-us' %}">Contact Us</a>
+          </div>
+        {% endif %}
+        </div>
+      </div>
+      <a href="{% url 'wishlist' %}" class="shop-action">
+        <span class="action-icon heart-icon" aria-hidden="true">♡</span>
+        <span>Wishlist <b class="header-count" id="wishlist-count">0</b></span>
+      </a>
+      <a href="{% url 'bag' %}" class="shop-action">
+        <span class="action-icon bag-icon" aria-hidden="true"></span>
+        <span>Bag <b class="header-count" id="bag-count">0</b></span>
+      </a>
+    </div>
+  </header>
+
+  <main class="shop-content">
+    <section class="product-heading">
+      <div>
+        <p class="product-kicker">Brand_name / Sarees</p>
+        <h1>Elegant sarees for every occasion</h1>
+        <p class="product-count" id="product-count">Loading products...</p>
+      </div>
+      <select class="sort-select" id="sort-products" aria-label="Sort products">
+        <option value="featured">Sort: Featured</option>
+        <option value="price-low">Price: Low to High</option>
+        <option value="price-high">Price: High to Low</option>
+        <option value="rating">Customer Rating</option>
+      </select>
+    </section>
+    <div class="product-layout">
+      <aside class="product-filters">
+        <p>FILTERS</p>
+        <button class="filter-button is-active" type="button" data-filter="all">All products</button>
+        <button class="filter-button" type="button" data-filter="Silk Saree">Silk sarees</button>
+        <button class="filter-button" type="button" data-filter="Designer Saree">Designer sarees</button>
+        <button class="filter-button" type="button" data-filter="Cotton Saree">Cotton sarees</button>
+        <button class="filter-button" type="button" data-filter="Party Wear">Party wear</button>
+      </aside>
+      <section class="product-grid" id="product-grid" aria-live="polite"></section>
+    </div>
+  </main>
+</body>
+</html>

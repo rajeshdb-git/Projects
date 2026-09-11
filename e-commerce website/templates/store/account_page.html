@@ -1,0 +1,188 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page_title }} | Brand_name</title>
+  <link rel="stylesheet" href="{% static 'css/site.css' %}">
+  {% if page_title == 'Login / Signup' %}
+    <script src="{% static 'js/login-page.js' %}" defer></script>
+  {% endif %}
+  {% if page_title == 'Bag' or page_title == 'Wishlist' %}
+    <script src="{% static 'js/saved-items.js' %}" defer></script>
+  {% endif %}
+</head>
+<body>
+{% if page_title == 'Login / Signup' %}
+  <main class="login-page">
+    <section class="login-card" aria-labelledby="login-heading">
+    {% if otp_sent %}
+      <div class="otp-illustration" aria-hidden="true">✦</div>
+      <h1 id="login-heading">Verify with OTP</h1>
+      <p class="otp-sent-text">Sent to {{ mobile_number }}</p>
+      {% if demo_otp %}<p class="demo-otp">Temporary OTP: <strong>{{ demo_otp }}</strong></p>{% endif %}
+      {% if otp_error %}<p class="login-error">{{ otp_error }}</p>{% endif %}
+      <form class="otp-form" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <input type="hidden" name="customer_name" value="{{ request.session.pending_customer_name }}">
+        <input type="hidden" name="mobile_number" value="{{ mobile_number }}">
+        <input type="hidden" name="action" value="verify_otp">
+        <div class="otp-inputs">
+          {% for index in '1234' %}<input name="otp_digit" class="otp-digit" type="text" inputmode="numeric" maxlength="1" aria-label="OTP digit {{ forloop.counter }}" required>{% endfor %}
+        </div>
+        <button class="verify-button" type="submit">VERIFY OTP</button>
+        <button class="resend-button" type="submit" name="action" value="send_otp">RESEND OTP</button>
+        <button class="password-link" type="button">Log in using <strong>Password</strong></button>
+      </form>
+      <p class="login-help">Having trouble logging in? <a href="{% url 'contact-us' %}">Get help</a></p>
+    {% else %}
+      <h1 id="login-heading">Login <span>or</span> Signup</h1>
+      <form class="login-form" id="login-form" method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        <input type="hidden" name="action" value="send_otp">
+        {% if login_error %}<p class="login-error">{{ login_error }}</p>{% endif %}
+        <label class="name-field">
+          <input id="customer-name" name="customer_name" type="text" placeholder="Full Name" aria-label="Full Name" required>
+        </label>
+        <label class="mobile-field">
+          <span>+91</span>
+          <span class="field-divider">|</span>
+          <input id="mobile-number" name="mobile_number" type="tel" inputmode="numeric" maxlength="10" placeholder="Mobile Number" aria-label="Mobile Number" required>
+          <strong>*</strong>
+        </label>
+        <label class="consent-row">
+          <input id="terms-check" type="checkbox">
+          <span>By continuing, I agree to the <a href="#terms">Terms of Use</a> &amp; <a href="#privacy">Privacy Policy</a> and I am above 18 years old.</span>
+        </label>
+        <button class="continue-button" id="continue-button" type="submit" disabled>SEND OTP</button>
+      </form>
+      <p class="login-help">Have trouble logging in? <a href="{% url 'contact-us' %}">Get help</a></p>
+    {% endif %}
+    </section>
+  </main>
+{% else %}
+{% if page_title == 'Bag' or page_title == 'Wishlist' %}
+  <header class="account-header">
+    <a class="account-brand" href="{% url 'home' %}">Brand_name</a>
+    <a class="account-back" href="{% url 'home' %}">Back to shop</a>
+  </header>
+  <main class="saved-items-page">
+    <section class="saved-items-card {% if page_title == 'Bag' %}bag-card{% endif %}">
+      <p class="account-label">Brand_name</p>
+      <h1>{{ page_title }}</h1>
+      <p class="saved-items-count" id="saved-items-count">Loading...</p>
+      {% if order_placed %}<div class="order-success">Your order has been placed successfully.</div>{% endif %}
+      {% if page_title == 'Bag' %}
+        <div class="selection-toolbar">
+          <label><input id="select-all-items" type="checkbox" checked><strong id="selection-count">0/0 ITEMS SELECTED</strong></label>
+          <button id="remove-selected-items" type="button">REMOVE</button>
+        </div>
+      {% endif %}
+      <div class="saved-items-grid" id="saved-items-grid"></div>
+      {% if page_title == 'Bag' %}
+      <section class="price-summary" aria-label="Price details">
+        <h2>PRICE DETAILS <span id="summary-count">(0 Items)</span></h2>
+        <div><span>Total MRP</span><strong id="summary-mrp">₹0</strong></div>
+        <div><span>Discount on MRP</span><strong class="summary-discount" id="summary-discount">- ₹0</strong></div>
+        <div><span>Platform Fee</span><strong id="summary-fee">₹0</strong></div>
+        <div class="summary-total"><span>Total Amount</span><strong id="summary-total">₹0</strong></div>
+        <div class="checkout-actions">
+          {% if customer and addresses %}
+            <form class="place-order-form" method="post">
+              {% csrf_token %}
+              <input type="hidden" name="action" value="place_order">
+              <input type="hidden" name="cart_products" id="cart-products-input" value="[]">
+              <button class="place-order-button" type="submit">PLACE ORDER</button>
+            </form>
+          {% else %}
+            <button class="place-order-button" type="button" disabled>PLACE ORDER</button>
+          {% endif %}
+          {% if customer %}
+            <button class="address-action-button" type="button" data-open-addresses>{% if addresses %}EDIT ADDRESS{% else %}SELECT ADDRESS{% endif %}</button>
+          {% else %}
+            <a class="address-action-button" href="{% url 'login' %}">SELECT ADDRESS</a>
+          {% endif %}
+        </div>
+      </section>
+      {% endif %}
+      {% if customer %}
+        <div class="address-modal" id="address-modal" hidden>
+          <div class="address-modal-backdrop" data-close-addresses></div>
+          <section class="address-modal-card" role="dialog" aria-modal="true" aria-labelledby="address-modal-title">
+            <button class="address-modal-close" type="button" data-close-addresses aria-label="Close">×</button>
+            <div class="address-selector-view">
+              <h2 id="address-modal-title">Select Delivery Address</h2>
+              <div class="pincode-check"><input type="text" placeholder="Enter Pincode"><button type="button">CHECK</button></div>
+              <div class="saved-address-heading"><strong>SAVED ADDRESS</strong><button type="button" data-show-address>+ Add New Address</button></div>
+              <div class="saved-address-list">
+                {% for address in addresses %}
+                  <form class="saved-address-option" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="action" value="select_address">
+                    <input type="hidden" name="address_id" value="{{ address.id }}">
+                    <button type="submit" class="address-option-button">
+                      <span class="address-radio">{% if forloop.first %}●{% else %}○{% endif %}</span>
+                      <span><strong>{{ customer.name }}</strong> <em>({{ address.label|title }})</em><br>{{ address.address }}, {{ address.city }}<br>{{ address.state }} - {{ address.postal_code }}<br>Mobile: <b>{{ customer.mobile_number }}</b></span>
+                    </button>
+                  </form>
+                {% empty %}<p class="address-help">No saved address yet.</p>{% endfor %}
+              </div>
+              <button class="modal-add-address" type="button" data-show-address>ADD NEW ADDRESS</button>
+            </div>
+            <form class="modal-add-form" method="post" hidden>
+              {% csrf_token %}
+              <button class="modal-back" type="button" data-back-addresses>← <span>ADD NEW ADDRESS</span></button>
+              <div class="modal-form-section">
+                <strong>CONTACT DETAILS</strong>
+                <input name="customer_name" type="text" value="{{ customer.name }}" placeholder="Name*" required>
+                <input name="customer_mobile" type="tel" value="{{ customer.mobile_number }}" placeholder="Mobile No*" required>
+              </div>
+              <div class="modal-form-section">
+                <strong>ADDRESS</strong>
+                <input name="postal_code" type="text" value="" placeholder="Pin Code*" required>
+                <input name="house_number" type="text" placeholder="House Number/Tower/Block*" required>
+                <input name="locality" type="text" placeholder="Address (locality, building, street)*" required>
+                <input name="locality_town" type="text" placeholder="Locality / Town*" required>
+                <div><input name="city" type="text" placeholder="City / District*" required><input name="state" type="text" placeholder="State*" required></div>
+              </div>
+              <input type="hidden" name="action" value="save_address">
+              <div class="modal-form-actions"><button type="button" data-back-addresses>Cancel</button><button type="submit">Save</button></div>
+            </form>
+          </section>
+        </div>
+      {% endif %}
+      {% if page_title == 'Bag' %}
+        <section class="recommendations">
+          <p class="recommendations-label">You may also like</p>
+          <div class="recommendation-chips">
+            <button class="recommendation-chip is-active" type="button">All</button>
+            <button class="recommendation-chip" type="button">Handbags</button>
+            <button class="recommendation-chip" type="button">Jewellery</button>
+            <button class="recommendation-chip" type="button">Beauty</button>
+            <button class="recommendation-chip" type="button">Accessories</button>
+          </div>
+          <div class="recommendation-grid" id="recommendation-grid"></div>
+        </section>
+      {% endif %}
+    </section>
+  </main>
+{% else %}
+  <header class="account-header">
+    <a class="account-brand" href="{% url 'home' %}">Brand_name</a>
+    <a class="account-back" href="{% url 'home' %}">Back to shop</a>
+  </header>
+  <main class="account-page">
+    <section class="account-card">
+      <p class="account-label">Brand_name</p>
+      <h1>{{ page_title }}</h1>
+      <p>{{ page_text }}</p>
+      {% if page_title == 'Login / Signup' %}
+        <button class="account-primary" type="button">Continue</button>
+      {% endif %}
+    </section>
+  </main>
+{% endif %}
+{% endif %}
+</body>
+</html>

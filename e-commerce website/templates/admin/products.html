@@ -1,0 +1,9 @@
+{% extends 'admin/base_admin.html' %}
+{% block title %}Products{% endblock %}
+{% block content %}
+<section class="page-heading"><div><p class="admin-kicker">Catalog</p><h1>Products</h1></div><a class="primary-button" href="{% url 'admin-product-add' %}">+ Add Product</a></section>
+<form class="toolbar" method="get"><input name="q" value="{{ query }}" placeholder="Search products..."><select name="category"><option value="">All categories</option>{% for category in categories %}<option value="{{ category.id }}">{{ category.name }}</option>{% endfor %}</select><select name="stock"><option value="">Stock status</option><option value="low">Low stock</option><option value="out">Out of stock</option></select><button type="submit">Filter</button></form>
+<section class="panel"><div class="table-wrap"><table><thead><tr><th>Product</th><th>Category</th><th>Price</th><th>Discount</th><th>Stock</th><th>Rating</th><th>Status</th><th>Actions</th></tr></thead><tbody>
+{% for product in page %}<tr><td><div class="product-cell">{% if product.image %}<img src="{{ product.image.url }}" alt="">{% elif product.external_image_url %}<img src="{{ product.external_image_url }}" alt="">{% endif %}<strong>{{ product.name }}</strong></div></td><td>{{ product.category.name }}</td><td>₹{{ product.price|floatformat:0 }}</td><td>{{ product.discount }}%</td><td class="{% if product.stock <= 5 %}low-stock{% endif %}">{{ product.stock }}</td><td>{{ product.rating }}</td><td><span class="badge {% if not product.is_active %}muted{% endif %}">{% if product.is_active %}Active{% else %}Inactive{% endif %}</span></td><td class="actions"><a href="{% url 'admin-product-edit' product.id %}">Edit</a><a class="danger-link" href="{% url 'admin-product-delete' product.id %}">Delete</a></td></tr>{% empty %}<tr><td colspan="8" class="empty">No products found.</td></tr>{% endfor %}
+</tbody></table></div>{% include 'admin/pagination.html' with page=page %}</section>
+{% endblock %}
