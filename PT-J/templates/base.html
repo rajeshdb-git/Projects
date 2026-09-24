@@ -1,63 +1,436 @@
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-   <link rel="stylesheet" href="{% static 'css/base.css'%}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-   {% block style %}
-   <!-- style -->
-   {% endblock %}
-</head>
-<body>
 
-    <header>
-        <a href="/home"><img src="{% static 'images/logo.png' %}" alt="LOGO" id="logo"></a>
-       
-                
-                <nav id="header_ryt">
-                    <a href="/home/" class="header-a">HOME</a>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-                    <a href="/about/" class="header-a">ABOUT</a>
+    <title>Physio_Whitefield</title>
 
-                    <a href="/SERVICES/" class="header-a">SERVICES</a>
+    <link rel="stylesheet"
+          href="{% static 'css/base.css' %}">
 
-                    <button id="login"> <a href="/login/" id="login" >LOGIN</a></button>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
-                    <!-- <button id="book_session"><a href="/book-session/" id="book_session">BOOK SESSION</a></button> -->
-
-                   
-                </nav>
-            
-        
-        </header>
-
-
-    {% block content %}
-        <h1>this is base </h1>
+    {% block style %}
     {% endblock %}
 
-    <footer>
+</head>
 
-        <h2 id="footer-text"> Follow Physo_Whitefield </h2>
-        <hr>
-        <div id="rights">
-           <b>Copyright © 2026 Phyco_Whitefield. All Rights Reserved.<br> Wellstar does not discriminate on, exclude people or treat them differently on the basis of race, color, national origin, age,<br> disability, sex, gender identity or expression or any other type of discrimination prohibited by law.</b>
-           
-            <div>
-                
-                
-                <a href=""><i class="fa-brands fa-x-twitter icons "></i></a>
-                <a href=""><i class="fa-brands fa-whatsapp icons "></i></a>
-                <a href=""><i class="fa-brands fa-instagram icons "></i></a>
-                <a href=""><i class="fa-regular fa-envelope icons "></i></a>
 
+<body>
+
+    <!-- =========================
+         HEADER
+         ========================= -->
+
+    <header class="site-header">
+
+        <div class="header-container">
+
+            <!-- LOGO -->
+
+            <a href="/home/" class="logo-link">
+
+                <img src="{% static 'images/logo.png' %}"
+                     alt="Physio Whitefield"
+                     id="logo">
+
+            </a>
+
+
+            <!-- MOBILE MENU BUTTON -->
+
+            <button id="menu-button" class="menu-button" type="button">
+                    <i class="fa-solid fa-bars"></i>
+            </button>
+
+
+            <!-- NAVIGATION -->
+
+            <nav id="header_ryt">
+
+                <a href="/home/"
+                   class="header-a">
+                    HOME
+                </a>
+
+                <a href="/about/"
+                   class="header-a">
+                    ABOUT
+                </a>
+
+
+               <!-- SERVICES -->
+
+<div class="services">
+
+    <a href="#"
+       class="header-a">
+
+        SERVICES
+
+        <i class="fa-solid fa-chevron-down service-arrow"></i>
+
+    </a>
+
+
+    <div class="services-dropdown">
+
+        <a href="{% url 'service_page' 'knee-pain' %}">
+            Knee Pain
+        </a>
+
+        <a href="{% url 'service_page' 'neck-pain' %}">
+            Neck Pain
+        </a>
+
+        <a href="{% url 'service_page' 'shoulder-pain' %}">
+            Shoulder Pain
+        </a>
+
+        <a href="{% url 'service_page' 'back-pain' %}">
+            Back Pain
+        </a>
+
+        <a href="{% url 'service_page' 'stroke-rehab' %}">
+            Stroke Rehab
+        </a>
+
+        <a href="{% url 'all_conditions' %}">
+            All Conditions
+        </a>
+
+        <a href="{% url 'service_page' 'therapies-for-treatment' %}">
+            Therapies For Treatment
+        </a>
+
+    </div>
+
+</div>
+
+
+                <a href="/contact/"
+                   class="header-a">
+                    CONTACT
+                </a>
+
+
+                <!-- BOOK APPOINTMENT -->
+
+                <button class="book-button open-appointment">
+
+    <i class="fa-regular fa-calendar-check"></i>
+
+    <span>Book Appointment</span>
+
+    <i class="fa-solid fa-arrow-right"></i>
+
+</button>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN CONTENT
+         ========================= -->
+
+    <main>
+
+        {% block content %}
+
+        {% endblock %}
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+         ========================= -->
+
+    <footer class="site-footer">
+
+        <div class="footer-container">
+
+
+            <!-- FOOTER BRAND -->
+
+            <div class="footer-column footer-brand">
+
+                <img src="{% static 'images/logo.png' %}"
+                     alt="Physio Whitefield"
+                     class="footer-logo">
+
+
+                <p>
+                    Personalized physiotherapy designed
+                    around you, your condition and your
+                    recovery goals.
+                </p>
+
+
+                <div class="footer-social">
+
+                    <a href="#" aria-label="Twitter">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="#" aria-label="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="Email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+
+                </div>
 
             </div>
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="footer-column">
+
+                <h3>Quick Links</h3>
+
+                <a href="/home/">Home</a>
+
+                <a href="/about/">About</a>
+
+                <a href="/contact/">Contact</a>
+
+                <a href="/appointment/">Book Appointment</a>
+
+            </div>
+
+
+            <!-- SERVICES -->
+
+            <div class="footer-column">
+
+                <h3>Services</h3>
+
+                <a href="#">Knee Pain</a>
+
+                <a href="#">Neck Pain</a>
+
+                <a href="#">Back Pain</a>
+
+                <a href="#">Stroke Rehab</a>
+
+                <a href="#">All Conditions</a>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="footer-column">
+
+                <h3>Contact Us</h3>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Whitefield, Bengaluru
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    +91 XXXXX XXXXX
+                </p>
+
+                <p>
+                    <i class="fa-regular fa-envelope"></i>
+                    info@example.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- COPYRIGHT -->
+
+        <div class="footer-bottom">
+
+            <p>
+                © 2026 Physio_Whitefield.
+                All Rights Reserved.
+            </p>
+
+            <p>
+                Designed with care for better recovery.
+            </p>
+
         </div>
 
     </footer>
+
+    <!-- =================================
+     APPOINTMENT POPUP
+     ================================= -->
+
+<!-- APPOINTMENT POPUP -->
+
+<div class="appointment-overlay" id="appointment-overlay">
+
+    <div class="appointment-modal">
+
+        <button
+            type="button"
+            class="appointment-close"
+            id="appointment-close">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <div class="appointment-icon">
+
+            <i class="fa-solid fa-user-doctor"></i>
+
+        </div>
+
+
+        <h2>Book Your Appointment</h2>
+
+        <p class="appointment-subtitle">
+            Get personalized physiotherapy care at your convenience.
+        </p>
+
+
+        <form id="appointment-form">
+
+            <div class="appointment-field">
+
+                <label for="appointment-name">
+                    Name
+                </label>
+
+                <input
+                    type="text"
+                    id="appointment-name"
+                    placeholder="Please provide your name"
+                    required>
+
+            </div>
+
+
+            <div class="appointment-field">
+
+                <label for="appointment-phone">
+                    Mobile Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="appointment-phone"
+                    placeholder="Enter your mobile number"
+                    maxlength="10"
+                    required>
+
+            </div>
+
+
+            <div class="appointment-field">
+
+                <label for="appointment-area">
+                    Location
+                </label>
+
+                <select id="appointment-area" required>
+
+                    <option value="">
+                        Select your area
+                    </option>
+
+                    <option>Whitefield</option>
+                    <option>Brookefield</option>
+                    <option>Marathahalli</option>
+                    <option>ITPL</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="appointment-field">
+
+                <label for="appointment-service">
+                    Service Required
+                </label>
+
+                <select id="appointment-service" required>
+
+                    <option value="">
+                        Select a service
+                    </option>
+
+                    <option>Knee Pain</option>
+                    <option>Neck Pain</option>
+                    <option>Shoulder Pain</option>
+                    <option>Back Pain</option>
+                    <option>Stroke Rehab</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+
+            <p class="appointment-consent">
+                By submitting this form, you agree to be contacted
+                regarding your appointment request.
+            </p>
+
+
+            <button
+                type="submit"
+                class="appointment-submit">
+
+                <i class="fa-regular fa-calendar-check"></i>
+
+                Book Appointment
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+
+
+
+    <script src="{% static 'js/base.js' %}"></script>
+
+    {% block script %}
+    
+    {% endblock %}
+
 </body>
+
 </html>

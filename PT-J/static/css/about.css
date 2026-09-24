@@ -1,0 +1,801 @@
+/* =========================
+   ABOUT HERO
+   ========================= */
+
+.about-hero {
+    min-height: 260px;
+
+    background:
+        linear-gradient(
+            rgba(35, 58, 70, 0.85),
+            rgba(35, 58, 70, 0.85)
+        ),
+        url("../images/about-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+}
+
+
+.about-hero-content {
+    width: 80%;
+    max-width: 1200px;
+
+    margin: auto;
+
+    padding: 50px 0;
+}
+
+
+.about-intro {
+    max-width: 1100px;
+
+    color: white;
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+}
+
+
+.breadcrumb {
+    color: white;
+
+    font-size: 17px;
+}
+
+
+/* =========================
+   ABOUT SECTION
+   ========================= */
+
+.about-section {
+    background-color: #f7f8fa;
+
+    padding: 70px 0;
+}
+
+
+.about-container {
+    width: 80%;
+    max-width: 1200px;
+
+    margin: auto;
+}
+
+
+/* =========================
+   ABOUT CARD
+   ========================= */
+
+.about-card {
+    background-color: white;
+
+    border-radius: 24px;
+
+    padding: 35px;
+
+    margin-bottom: 30px;
+
+    display: flex;
+
+    gap: 25px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+.about-icon {
+    min-width: 55px;
+
+    height: 55px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #2f9e58;
+
+    font-size: 35px;
+}
+
+
+.about-card-content {
+    flex: 1;
+}
+
+
+.about-card h2 {
+    color: #294455;
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+}
+
+
+.about-card p {
+    color: #333;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    margin-bottom: 18px;
+}
+
+
+.about-card p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   VISION
+   ========================= */
+
+.vision-card {
+    min-height: 130px;
+}
+
+
+/* =========================
+   APPROACH
+   ========================= */
+
+.approach-card {
+    min-height: 300px;
+}
+
+
+/* =========================
+   CARE SECTION
+   ========================= */
+
+.care-section {
+    padding: 30px 10px;
+}
+
+
+.care-section h2 {
+    color: #294455;
+
+    font-size: 34px;
+
+    margin-bottom: 20px;
+}
+
+
+.care-section p {
+    color: #333;
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    max-width: 900px;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .about-container {
+        width: 90%;
+    }
+
+
+    .about-hero-content {
+        width: 90%;
+    }
+
+
+    .about-intro {
+        font-size: 16px;
+    }
+
+
+    .about-card {
+        padding: 25px;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .about-icon {
+        justify-content: flex-start;
+    }
+
+
+    .about-card h2 {
+        font-size: 24px;
+    }
+
+
+    .about-card p {
+        font-size: 16px;
+    }
+
+
+    .care-section h2 {
+        font-size: 28px;
+    }
+
+}/* =========================
+   OUR PROGRESS
+   ========================= */
+
+.progress-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.progress-container {
+    width: 88%;
+    max-width: 1450px;
+    margin: auto;
+}
+
+
+/* =========================
+   PROGRESS HEADING
+   ========================= */
+
+.progress-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.progress-heading h2 {
+    color: #294455;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.progress-heading p {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.6;
+    max-width: 750px;
+    margin: auto;
+}
+
+
+/* =========================
+   TIMELINE
+   ========================= */
+
+.progress-timeline {
+    position: relative;
+    padding-left: 80px;
+}
+
+
+/* BACKGROUND LINE */
+
+.progress-line {
+    position: absolute;
+
+    left: 39px;
+    top: 0;
+
+    width: 3px;
+    height: 100%;
+
+    background-color: #d8ebe2;
+
+    border-radius: 10px;
+}
+
+
+/* GREEN FILLING LINE */
+
+.progress-line-fill {
+    position: absolute;
+
+    left: 39px;
+    top: 0;
+
+    width: 3px;
+    height: 0;
+
+    background-color: #258b50;
+
+    border-radius: 10px;
+
+    transition: height 0.15s linear;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   PROGRESS STEP
+   ========================= */
+
+.progress-step {
+    position: relative;
+
+    min-height: 150px;
+
+    margin-bottom: 28px;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+
+/* =========================
+   NUMBER CIRCLE
+   ========================= */
+
+.progress-number {
+    position: absolute;
+
+    left: -65px;
+    top: 0;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background-color: #d8ebe2;
+
+    color: #258b50;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    z-index: 5;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* ACTIVE NUMBER */
+
+.progress-step.active .progress-number {
+    background-color: #258b50;
+    color: white;
+
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   PROGRESS CARD
+   ========================= */
+
+.progress-card {
+    width: 100%;
+
+    background-color: #f1f1f1;
+
+    border-radius: 20px;
+
+    padding: 24px 28px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 6px 18px rgba(0, 0, 0, 0.05);
+
+    position: relative;
+}
+
+
+/* CARD TRIANGLE */
+
+.progress-card::before {
+    content: "";
+
+    position: absolute;
+
+    left: -20px;
+    top: 14px;
+
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+
+    border-right: 20px solid #f1f1f1;
+}
+
+
+/* =========================
+   CARD HEADING
+   ========================= */
+
+.progress-card h3 {
+    color: #294455;
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   CARD TEXT
+   ========================= */
+
+.progress-card p {
+    color: #27313d;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    margin: 0;
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 768px) {
+
+    .progress-container {
+        width: 90%;
+    }
+
+    .progress-heading h2 {
+        font-size: 28px;
+    }
+
+    .progress-timeline {
+        padding-left: 60px;
+    }
+
+    .progress-line,
+    .progress-line-fill {
+        left: 28px;
+    }
+
+    .progress-number {
+        left: -47px;
+
+        width: 40px;
+        height: 40px;
+    }
+
+    .progress-card {
+        padding: 22px 20px;
+        border-radius: 18px;
+    }
+
+    .progress-card h3 {
+        font-size: 21px;
+    }
+
+    .progress-card p {
+        font-size: 14px;
+    }
+}
+/* =========================
+   OUR SPECIALIZATIONS
+   ========================= */
+
+.specializations-section {
+    padding: 60px 0;
+
+    background-color: #f8f9fb;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   HEADING
+   ========================= */
+
+.specializations-heading {
+    text-align: center;
+
+    max-width: 1000px;
+
+    margin: 0 auto 35px;
+}
+
+
+.specializations-heading h2 {
+    color: #294455;
+
+    font-size: 34px;
+
+    margin-bottom: 12px;
+}
+
+
+.specializations-heading p {
+    color: #333;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CAROUSEL
+   ========================= */
+
+.specializations-carousel {
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+}
+
+
+/* =========================
+   CARDS WINDOW
+   ========================= */
+
+.specializations-window {
+    width: 84%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* =========================
+   CARDS TRACK
+   ========================= */
+
+.specializations-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+
+/* =========================
+   CARD
+   ========================= */
+
+.specialization-card {
+    flex: 0 0 calc(25% - 12px);
+
+    background-color: white;
+
+    border-radius: 17px;
+
+    overflow: hidden;
+
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================
+   IMAGE
+   ========================= */
+
+.specialization-image {
+    width: 100%;
+    height: 185px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =========================
+   CARD CONTENT
+   ========================= */
+
+.specialization-content {
+    padding: 16px;
+
+    text-align: center;
+}
+
+
+.specialization-content h3 {
+    color: #294455;
+
+    font-size: 19px;
+
+    line-height: 1.3;
+
+    margin-bottom: 10px;
+}
+
+
+.specialization-content p {
+    color: #333;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    min-height: 105px;
+
+    margin-bottom: 12px;
+}
+
+
+.specialization-content a {
+    color: #258b50;
+
+    font-size: 15px;
+
+    text-decoration: none;
+}
+
+
+.specialization-content a:hover {
+    color: #176b3b;
+}
+
+
+/* =========================
+   ARROWS
+   ========================= */
+
+.specialization-arrow {
+    position: absolute;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background-color: white;
+
+    color: #294455;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    z-index: 10;
+
+    box-shadow:
+        0 4px 15px rgba(0, 0, 0, 0.12);
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.specialization-arrow:hover {
+    background-color: #258b50;
+
+    color: white;
+
+    transform: translateY(-50%) scale(1.05);
+}
+
+
+.specialization-prev {
+    left: 3%;
+}
+
+
+.specialization-next {
+    right: 3%;
+}
+
+
+/* =========================
+   DOTS
+   ========================= */
+
+.specialization-dots {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+
+.specialization-dot {
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background-color: #d0d0d0;
+
+    cursor: pointer;
+
+    transition: background-color 0.3s ease;
+}
+
+
+.specialization-dot.active {
+    background-color: #258b50;
+}
+
+
+/* =========================
+   TABLET
+   ========================= */
+
+@media (max-width: 1000px) {
+
+    .specialization-card {
+        flex: 0 0 calc(50% - 9px);
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+   ========================= */
+
+@media (max-width: 600px) {
+
+    .specializations-window {
+        width: 78%;
+    }
+
+    .specialization-card {
+        flex: 0 0 100%;
+    }
+
+    .specialization-image {
+        height: 200px;
+    }
+
+    .specialization-arrow {
+        width: 40px;
+
+        height: 40px;
+
+        font-size: 17px;
+    }
+
+    .specialization-prev {
+        left: 2%;
+    }
+
+    .specialization-next {
+        right: 2%;
+    }
+
+}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'css/all_conditions.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="conditions-page">
+
+    <div class="conditions-heading">
+        <h1>Conditions We Treat</h1>
+
+        <p>
+            Physio_Whitefield helps you manage various conditions
+            with personalized physiotherapy treatment.
+        </p>
+    </div>
+
+
+    <div class="conditions-grid">
+
+        {% for condition in conditions %}
+
+        <div class="condition-card">
+
+            <img src="{% static condition.image %}"
+                 alt="{{ condition.title }}">
+
+            <div class="condition-content">
+
+                <h2>{{ condition.title }}</h2>
+
+                <p>{{ condition.description }}</p>
+
+                <a href="{% url 'service_page' condition.slug %}">
+                    View Treatment →
+                </a>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

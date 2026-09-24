@@ -15,12 +15,7 @@
   
 }
 
-#form1{
-    height: 600px;
-    width: 400px;
-    background-color: white;
-    border-radius: 20px;
-}
+
 #headline {
     font-size: 68px;
     line-height: 1.05;
@@ -29,7 +24,14 @@
 
     margin: 0 0 25px 0;
 }
-
+#headline2 {
+    font-size: 68px;
+    line-height: 1.05;
+    font-weight: 700;
+    
+    color: #055355;
+    margin: 0 0 25px 0;
+}
 #para1 {
     font-size: 21px;
     line-height: 1.5;
@@ -44,4 +46,383 @@
     font-weight: 400;
 
     margin: 0 0 30px 0;
+}
+
+
+
+
+
+/* ========================================
+   CONDITIONS SECTION
+   ======================================== */
+
+.conditions-section {
+
+    width: 100%;
+
+    padding: 70px 7%;
+
+    box-sizing: border-box;
+
+    background: #f8f9fb;
+}
+
+
+/* HEADING */
+
+.conditions-heading {
+
+    text-align: center;
+
+    margin-bottom: 40px;
+}
+
+
+.conditions-heading h2 {
+
+    margin-bottom: 10px;
+
+    color: #29485a;
+
+    font-size: 36px;
+}
+
+
+.conditions-heading p {
+
+    margin: 0;
+
+    color: #263746;
+
+    font-size: 19px;
+}
+
+
+/* ========================================
+   CARDS GRID
+   ======================================== */
+
+.conditions-grid {
+
+    max-width: 1280px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 30px;
+}
+
+
+/* ========================================
+   CONDITION CARD
+   ======================================== */
+
+.condition-card {
+
+    min-height: 165px;
+
+    display: flex;
+
+    background: white;
+
+    border: 1px solid #e3e7ea;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 2px 8px rgba(0, 0, 0, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.condition-card:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+
+/* IMAGE */
+
+.condition-card img {
+
+    width: 48%;
+
+    min-height: 165px;
+
+    object-fit: cover;
+}
+
+
+/* CARD CONTENT */
+
+.condition-info {
+
+    flex: 1;
+
+    padding: 15px 16px;
+}
+
+
+.condition-info h3 {
+
+    margin: 0 0 12px;
+
+    color: #254b68;
+
+    font-size: 20px;
+}
+
+
+.condition-info p {
+
+    margin: 0;
+
+    padding: 8px 0;
+
+    color: #35536c;
+
+    font-size: 15px;
+
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.condition-info span {
+
+    display: block;
+
+    margin-top: 10px;
+
+    color: #258b50;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+/* ========================================
+   VIEW MORE
+   ======================================== */
+
+.view-more-card {
+
+    min-height: 165px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #dcefe6;
+
+    color: #258b50;
+
+    font-family: inherit;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.view-more-card:hover {
+
+    background: #cce5d8;
+
+    transform: translateY(-3px);
+}
+
+
+.view-more-card i {
+
+    transition:
+        transform 0.25s ease;
+}
+
+
+.view-more-card.active i {
+
+    transform: rotate(180deg);
+}
+
+
+/* ========================================
+   EXTRA CARDS
+   ======================================== */
+
+.extra-condition {
+
+    display: none;
+}
+
+
+.extra-condition.show {
+
+    display: flex;
+
+    animation: conditionAppear 0.35s ease;
+}
+
+
+@keyframes conditionAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* ========================================
+   EXPLORE BUTTON
+   ======================================== */
+
+.explore-conditions {
+
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 40px;
+}
+
+
+.explore-conditions a {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 230px;
+
+    padding: 15px 25px;
+
+    border-radius: 30px;
+
+    background: #258b50;
+
+    color: white;
+
+    font-size: 17px;
+
+    text-decoration: none;
+
+    transition: 0.25s ease;
+}
+
+
+.explore-conditions a:hover {
+
+    background: #1d7041;
+
+    transform: translateY(-2px);
+}
+
+
+/* ========================================
+   MOBILE
+   ======================================== */
+
+@media (max-width: 900px) {
+
+    .conditions-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .conditions-section {
+
+        padding: 50px 20px;
+
+    }
+
+
+    .conditions-heading h2 {
+
+        font-size: 28px;
+
+    }
+
+
+    .conditions-heading p {
+
+        font-size: 16px;
+
+    }
+
+
+    .conditions-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+    }
+
+
+    .condition-card {
+
+        min-height: 145px;
+
+    }
+
+
+    .condition-card img {
+
+        min-height: 145px;
+
+    }
+
+
+    .condition-info h3 {
+
+        font-size: 18px;
+
+    }
+
 }
