@@ -10,7 +10,7 @@ if (loginForm) {
     continueButton.disabled = !isReady;
     continueButton.classList.toggle('is-ready', isReady);
   }
-
+  
   mobileNumber.addEventListener('input', () => {
     mobileNumber.value = mobileNumber.value.replace(/\D/g, '').slice(0, 10);
     updateContinueButton();
