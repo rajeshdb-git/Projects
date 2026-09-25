@@ -6,39 +6,141 @@
 {% endblock %}
 
 
-
 {% block content %}
 
-<!-- ABOUT HERO -->
+<!-- =========================================================
+     ABOUT DOCTOR
+     ========================================================= -->
 
-<section class="about-hero">
+<section id="doctor-about">
 
-    <div class="about-hero-content">
+    <!-- Doctor Image -->
+   <div class="doctor-about-image">
 
-        <p class="about-intro">
-            At Physio_Whitefield, we are focused on providing
-            quality physiotherapy care designed around your
-            condition, recovery needs, and personal goals.
+    <div class="doctor-image-wrapper">
+
+        <img
+            src="{% static 'images/profile.png' %}"
+            alt="Dr. JEEVAN ND - Physiotherapist"
+        >
+
+        <div class="doctor-image-name">
+            <h2>Dr. JEEVAN ND</h2>
+            <span>PHYSIOTHERAPIST</span>
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- Doctor Content -->
+    <div class="doctor-about-content">
+
+        <div class="doctor-about-badge">
+            <span></span>
+            ABOUT YOUR PHYSIOTHERAPIST
+        </div>
+
+
+        <h1>
+            Personal Care.
+            <strong>Better Movement.</strong>
+        </h1>
+
+
+        <p class="doctor-about-intro">
+            Physiotherapy focused on helping you manage pain,
+            improve movement and return to the activities
+            that matter to you.
         </p>
 
-        <p class="breadcrumb">
-            {{ breadcrumb }}
-        </p>
+
+        <!-- Doctor Details -->
+        <div class="doctor-about-details">
+
+            <h2>Your Physiotherapist</h2>
+
+            <p>
+                With a patient-focused approach, every treatment
+                session is planned around your condition, comfort
+                and recovery goals.
+            </p>
+
+            <p>
+                Our focus is on practical improvements that can
+                help you move with greater confidence, improve
+                strength and support your everyday independence.
+            </p>
+
+        </div>
+
+
+        <!-- Highlights -->
+        <div class="doctor-highlights">
+
+            <div class="doctor-highlight">
+
+                <i class="fa-solid fa-user-doctor"></i>
+
+                <div>
+                    <strong>Patient Focused</strong>
+                    <span>Care designed around you</span>
+                </div>
+
+            </div>
+
+
+            <div class="doctor-highlight">
+
+                <i class="fa-solid fa-house-medical"></i>
+
+                <div>
+                    <strong>Home Visits</strong>
+                    <span>Professional care at home</span>
+                </div>
+
+            </div>
+
+
+            <div class="doctor-highlight">
+
+                <i class="fa-solid fa-person-walking"></i>
+
+                <div>
+                    <strong>Recovery Focused</strong>
+                    <span>Better movement & function</span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Appointment Button -->
+        <a
+            href="#appointment-overlay"
+            class="doctor-about-btn open-appointment"
+        >
+            <span>Book an Appointment</span>
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
 
     </div>
 
 </section>
 
 
-<!-- ABOUT CONTENT -->
+<!-- =========================================================
+     ABOUT INFORMATION
+     ========================================================= -->
 
 <section class="about-section">
 
     <div class="about-container">
 
 
-        <!-- OUR VISION -->
-
+        <!-- Our Vision -->
         <div class="about-card vision-card">
 
             <div class="about-icon">
@@ -62,8 +164,7 @@
         </div>
 
 
-        <!-- OUR APPROACH -->
-
+        <!-- Our Approach -->
         <div class="about-card approach-card">
 
             <div class="about-icon">
@@ -105,151 +206,161 @@
         </div>
 
 
-        <!-- OUR PROGRESS -->
+        <!-- =================================================
+             OUR PROGRESS
+             ================================================= -->
 
-        <!-- OUR PROGRESS -->
+        <section class="progress-section">
 
-<section class="progress-section">
+            <div class="progress-container">
 
-    <div class="progress-container">
+                <div class="progress-heading">
 
-        <div class="progress-heading">
-
-            <h2>Our Progress</h2>
-
-            <p>
-                Your recovery is a journey. We guide you through
-                every stage of treatment, from understanding your
-                condition to maintaining long-term results.
-            </p>
-
-        </div>
-
-
-        <!-- TIMELINE -->
-
-        <div class="progress-timeline">
-
-            <!-- BACKGROUND LINE -->
-
-            <div class="progress-line"></div>
-
-            <!-- FILLING LINE -->
-
-            <div class="progress-line-fill"></div>
-
-
-            <!-- STEP 1 -->
-
-            <div class="progress-step">
-
-                <div class="progress-number">
-                    1
-                </div>
-
-                <div class="progress-card">
-
-                    <h3>Awareness &amp; Goal Setting</h3>
+                    <h2>Our Progress</h2>
 
                     <p>
-                        Being educated about your body, body mechanics,
-                        your condition or injury, types of treatment
-                        and exercises helps you understand your condition
-                        and set specific goals. This personalized therapy
-                        guides your treatment to support faster recovery
-                        and more successful results.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- STEP 2 -->
-
-            <div class="progress-step">
-
-                <div class="progress-number">
-                    2
-                </div>
-
-                <div class="progress-card">
-
-                    <h3>Recovery</h3>
-
-                    <p>
-                        We recognize that you may be experiencing pain
-                        and/or difficulty moving the way you want to.
-                        Experience relief through modern, drug-free
-                        physiotherapy treatments such as Mulligan,
-                        McKenzie, Kinesio-taping, Cupping and more.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-            <!-- STEP 3 -->
-
-            <div class="progress-step">
-
-                <div class="progress-number">
-                    3
-                </div>
-
-                <div class="progress-card">
-
-                    <h3>Maintenance</h3>
-
-                    <p>
-                        Pain relief is just the beginning. The next step
-                        is to return to your previous level of function.
-                        We tailor exercises to restore mobility and
-                        function while supporting your lifestyle for
+                        Your recovery is a journey. We guide you
+                        through every stage of treatment, from
+                        understanding your condition to maintaining
                         long-term results.
                     </p>
 
                 </div>
 
-            </div>
+
+                <div class="progress-timeline">
+
+                    <div class="progress-line"></div>
+
+                    <div class="progress-line-fill"></div>
 
 
-            <!-- STEP 4 -->
+                    <!-- Step 1 -->
+                    <div class="progress-step">
 
-            <div class="progress-step">
+                        <div class="progress-number">
+                            1
+                        </div>
 
-                <div class="progress-number">
-                    4
+                        <div class="progress-card">
+
+                            <h3>
+                                Awareness & Goal Setting
+                            </h3>
+
+                            <p>
+                                Being educated about your body,
+                                body mechanics, your condition or
+                                injury, types of treatment and
+                                exercises helps you understand your
+                                condition and set specific goals.
+                                This personalized therapy guides
+                                your treatment to support faster
+                                recovery and more successful results.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Step 2 -->
+                    <div class="progress-step">
+
+                        <div class="progress-number">
+                            2
+                        </div>
+
+                        <div class="progress-card">
+
+                            <h3>
+                                Recovery
+                            </h3>
+
+                            <p>
+                                We recognize that you may be
+                                experiencing pain and/or difficulty
+                                moving the way you want to.
+                                Experience relief through modern,
+                                drug-free physiotherapy treatments
+                                such as Mulligan, McKenzie,
+                                Kinesio-taping, Cupping and more.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Step 3 -->
+                    <div class="progress-step">
+
+                        <div class="progress-number">
+                            3
+                        </div>
+
+                        <div class="progress-card">
+
+                            <h3>
+                                Maintenance
+                            </h3>
+
+                            <p>
+                                Pain relief is just the beginning.
+                                The next step is to return to your
+                                previous level of function. We tailor
+                                exercises to restore mobility and
+                                function while supporting your
+                                lifestyle for long-term results.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Step 4 -->
+                    <div class="progress-step">
+
+                        <div class="progress-number">
+                            4
+                        </div>
+
+                        <div class="progress-card">
+
+                            <h3>
+                                Prevention & Lifestyle
+                            </h3>
+
+                            <p>
+                                Long-term recovery also depends on
+                                maintaining healthy movement and
+                                lifestyle habits. We provide home
+                                exercise guidance, practical
+                                recommendations and simple steps
+                                to help prevent future problems.
+                            </p>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
-                <div class="progress-card">
-
-                    <h3>Prevention &amp; Lifestyle</h3>
-
-                    <p>
-                        Long-term recovery also depends on maintaining
-                        healthy movement and lifestyle habits. We provide
-                        home exercise guidance, practical recommendations
-                        and simple steps to help prevent future problems.
-                    </p>
-
-                </div>
-
             </div>
 
-        </div>
-
-    </div>
-
-</section>
+        </section>
 
 
-        <!-- PERSONALIZED CARE -->
+        <!-- =================================================
+             PERSONALIZED CARE
+             ================================================= -->
 
         <div class="care-section">
 
-            <h2>Personalized Care. Meaningful Recovery.</h2>
+            <h2>
+                Personalized Care. Meaningful Recovery.
+            </h2>
 
             <p>
                 Every person is different, and so is every
@@ -267,11 +378,14 @@
 
         </div>
 
-
     </div>
 
 </section>
-<!-- OUR SPECIALIZATIONS -->
+
+
+<!-- =========================================================
+     SPECIALIZATIONS
+     ========================================================= -->
 
 <section class="specializations-section">
 
@@ -280,8 +394,9 @@
         <h2>Our Specializations</h2>
 
         <p>
-            We provide effective physiotherapy treatment across
-            different specializations based on individual needs.
+            We provide effective physiotherapy treatment
+            across different specializations based on
+            individual needs.
         </p>
 
     </div>
@@ -289,24 +404,25 @@
 
     <div class="specializations-carousel">
 
-        <!-- LEFT ARROW -->
-
+        <!-- Previous Button -->
         <button
             class="specialization-arrow specialization-prev"
-            id="specialization-prev">
+            id="specialization-prev"
+            type="button"
+        >
 
             <i class="fa-solid fa-chevron-left"></i>
 
         </button>
 
 
-        <!-- CARDS VIEW -->
-
+        <!-- Cards -->
         <div class="specializations-window">
 
             <div
                 class="specializations-track"
-                id="specializations-track">
+                id="specializations-track"
+            >
 
                 {% for item in specializations %}
 
@@ -315,8 +431,8 @@
                     <img
                         src="{% static item.image %}"
                         alt="{{ item.title }}"
-                        class="specialization-image">
-
+                        class="specialization-image"
+                    >
 
                     <div class="specialization-content">
 
@@ -343,11 +459,12 @@
         </div>
 
 
-        <!-- RIGHT ARROW -->
-
+        <!-- Next Button -->
         <button
             class="specialization-arrow specialization-next"
-            id="specialization-next">
+            id="specialization-next"
+            type="button"
+        >
 
             <i class="fa-solid fa-chevron-right"></i>
 
@@ -356,16 +473,20 @@
     </div>
 
 
-    <!-- DOTS -->
-
+    <!-- Carousel Dots -->
     <div
         class="specialization-dots"
-        id="specialization-dots">
-    </div>
+        id="specialization-dots"
+    ></div>
 
 </section>
 
 
+<!-- =========================================================
+     JAVASCRIPT
+     ========================================================= -->
+
 <script src="{% static 'js/specializations.js' %}"></script>
 <script src="{% static 'js/about.js' %}"></script>
+
 {% endblock %}

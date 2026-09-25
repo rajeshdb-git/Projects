@@ -1,55 +1,494 @@
+/* =========================================================
+   PAGE 1 - NATURAL IMAGE + CONTENT HERO
+   ========================================================= */
 
-#pag1{
-    padding: 0px;
-    background-image: url("../images/image.png");
-    background-repeat: no-repeat;
-    background-size:auto;
+#pag1 {
     width: 100%;
     height: 640px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background-image: url("../images/image.png");
+
     background-size: cover;
-    margin: 0;
-    padding: 0;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================================
+   NATURAL WHITE BLEND OVER IMAGE
+   ========================================================= */
+
+#pag1::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,1) 0%,
+            rgba(255,255,255,0.99) 28%,
+            rgba(255,255,255,0.94) 40%,
+            rgba(255,255,255,0.72) 52%,
+            rgba(255,255,255,0.25) 65%,
+            rgba(255,255,255,0) 78%
+        );
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.physio-hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 58%;
+
+    height: 100%;
+
+    padding-left: 50px;
+    padding-top: 40px;
+    padding-bottom: 35px;
+
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  
+
+    flex-direction: column;
+
+    justify-content: center;
 }
 
 
-#headline {
-    font-size: 68px;
-    line-height: 1.05;
+/* =========================================================
+   BADGE
+   ========================================================= */
+
+.physio-badge {
+
+    width: fit-content;
+
+    padding: 9px 21px;
+
+    margin-bottom: 32px;
+
+    border-radius: 30px;
+
+    background: #eaf7f3;
+
+    color: #10865d;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    letter-spacing: 0.2px;
+}
+
+
+/* =========================================================
+   HEADING
+   ========================================================= */
+
+.physio-hero-content h1 {
+
+    max-width: 850px;
+
+    margin: 0;
+
+    color: #202052;
+
+    font-size: 58px;
+
+    line-height: 1.14;
+
     font-weight: 700;
-    letter-spacing: -1.5px;
 
-    margin: 0 0 25px 0;
-}
-#headline2 {
-    font-size: 68px;
-    line-height: 1.05;
-    font-weight: 700;
-    
-    color: #055355;
-    margin: 0 0 25px 0;
-}
-#para1 {
-    font-size: 21px;
-    line-height: 1.5;
-    font-weight: 500;
-
-    margin: 0 0 18px 0;
+    letter-spacing: -1.8px;
 }
 
-#para2 {
-    font-size: 17px;
-    line-height: 1.7;
+
+.physio-hero-content h1 span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: #16885f;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.physio-description {
+
+    max-width: 650px;
+
+    margin: 25px 0 0;
+
+    color: #27334c;
+
+    font-size: 18px;
+
+    line-height: 1.65;
+
     font-weight: 400;
-
-    margin: 0 0 30px 0;
 }
 
 
+/* =========================================================
+   CALL / APPOINTMENT BUTTON
+   ========================================================= */
 
+.physio-call-btn {
+
+    width: fit-content;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    margin-top: 34px;
+
+    padding: 16px 27px;
+
+    border: 1px solid #d2d6e1;
+
+    border-radius: 35px;
+
+    background: rgba(255,255,255,0.92);
+
+    color: #242653;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    box-shadow: 0 3px 12px rgba(20,35,55,0.04);
+
+    transition: all 0.25s ease;
+}
+
+
+.physio-call-btn i {
+
+    font-size: 15px;
+
+    color: #242653;
+}
+
+
+.physio-call-btn:hover {
+
+    background: #16885f;
+
+    border-color: #16885f;
+
+    color: white;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(22,136,95,0.16);
+}
+
+
+.physio-call-btn:hover i {
+
+    color: white;
+}
+
+
+/* =========================================================
+   FEATURES
+   ========================================================= */
+
+.physio-features {
+
+    display: grid;
+
+    grid-template-columns: 1.2fr 1fr 1.2fr;
+
+    gap: 35px;
+
+    max-width: 760px;
+
+    margin-top: 53px;
+}
+
+
+.physio-feature {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #111c55;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+
+    font-weight: 500;
+}
+
+
+.physio-feature i {
+
+    flex-shrink: 0;
+
+    color: #07875e;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   DESKTOP LARGE SCREEN
+   ========================================================= */
+
+@media (min-width: 1500px) {
+
+    #pag1 {
+
+        height: 680px;
+
+        background-position: center center;
+    }
+
+    .physio-hero-content {
+
+        padding-left: 65px;
+    }
+
+    .physio-hero-content h1 {
+
+        font-size: 64px;
+    }
+
+    .physio-description {
+
+        font-size: 19px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+
+    #pag1 {
+
+        height: 600px;
+
+        background-position: 58% center;
+    }
+
+
+    #pag1::before {
+
+        background:
+            linear-gradient(
+                90deg,
+                rgba(255,255,255,1) 0%,
+                rgba(255,255,255,0.98) 35%,
+                rgba(255,255,255,0.85) 52%,
+                rgba(255,255,255,0.35) 70%,
+                rgba(255,255,255,0) 85%
+            );
+    }
+
+
+    .physio-hero-content {
+
+        width: 65%;
+
+        padding-left: 40px;
+    }
+
+
+    .physio-hero-content h1 {
+
+        font-size: 48px;
+    }
+
+
+    .physio-description {
+
+        max-width: 570px;
+
+        font-size: 16px;
+    }
+
+
+    .physio-features {
+
+        gap: 18px;
+
+        max-width: 650px;
+    }
+
+
+    .physio-feature {
+
+        font-size: 13px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    #pag1 {
+
+        height: auto;
+
+        min-height: 700px;
+
+        background-position: 68% center;
+    }
+
+
+    #pag1::before {
+
+        background:
+            linear-gradient(
+                180deg,
+                rgba(255,255,255,1) 0%,
+                rgba(255,255,255,0.97) 38%,
+                rgba(255,255,255,0.78) 58%,
+                rgba(255,255,255,0.25) 78%,
+                rgba(255,255,255,0) 100%
+            );
+    }
+
+
+    .physio-hero-content {
+
+        width: 100%;
+
+        min-height: 700px;
+
+        padding: 45px 25px 40px;
+
+        justify-content: flex-start;
+    }
+
+
+    .physio-badge {
+
+        margin-bottom: 24px;
+
+        font-size: 13px;
+    }
+
+
+    .physio-hero-content h1 {
+
+        font-size: 41px;
+
+        line-height: 1.13;
+
+        letter-spacing: -1px;
+    }
+
+
+    .physio-description {
+
+        margin-top: 20px;
+
+        font-size: 16px;
+
+        line-height: 1.6;
+    }
+
+
+    .physio-call-btn {
+
+        margin-top: 28px;
+    }
+
+
+    .physio-features {
+
+        grid-template-columns: 1fr;
+
+        gap: 18px;
+
+        margin-top: 40px;
+    }
+
+
+    .physio-feature {
+
+        font-size: 14px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    #pag1 {
+
+        min-height: 680px;
+
+        background-position: 70% center;
+    }
+
+
+    .physio-hero-content {
+
+        padding: 35px 20px;
+    }
+
+
+    .physio-hero-content h1 {
+
+        font-size: 34px;
+    }
+
+
+    .physio-description {
+
+        font-size: 15px;
+    }
+
+
+    .physio-call-btn {
+
+        padding: 14px 23px;
+
+        font-size: 15px;
+    }
+}
 
 
 /* ========================================
@@ -57,43 +496,28 @@
    ======================================== */
 
 .conditions-section {
-
     width: 100%;
-
     padding: 70px 7%;
-
     box-sizing: border-box;
-
     background: #f8f9fb;
 }
-
 
 /* HEADING */
 
 .conditions-heading {
-
     text-align: center;
-
     margin-bottom: 40px;
 }
 
-
 .conditions-heading h2 {
-
     margin-bottom: 10px;
-
     color: #29485a;
-
     font-size: 36px;
 }
 
-
 .conditions-heading p {
-
     margin: 0;
-
     color: #263746;
-
     font-size: 19px;
 }
 
@@ -103,16 +527,10 @@
    ======================================== */
 
 .conditions-grid {
-
     max-width: 1280px;
-
     margin: auto;
-
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
+    grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
 
@@ -122,45 +540,29 @@
    ======================================== */
 
 .condition-card {
-
     min-height: 165px;
-
     display: flex;
-
     background: white;
-
     border: 1px solid #e3e7ea;
-
     border-radius: 10px;
-
     overflow: hidden;
-
-    box-shadow:
-        0 2px 8px rgba(0, 0, 0, 0.05);
-
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition:
         transform 0.25s ease,
         box-shadow 0.25s ease;
 }
 
-
 .condition-card:hover {
-
     transform: translateY(-4px);
-
-    box-shadow:
-        0 8px 20px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
 }
 
 
 /* IMAGE */
 
 .condition-card img {
-
     width: 48%;
-
     min-height: 165px;
-
     object-fit: cover;
 }
 
@@ -168,47 +570,29 @@
 /* CARD CONTENT */
 
 .condition-info {
-
     flex: 1;
-
     padding: 15px 16px;
 }
 
-
 .condition-info h3 {
-
     margin: 0 0 12px;
-
     color: #254b68;
-
     font-size: 20px;
 }
 
-
 .condition-info p {
-
     margin: 0;
-
     padding: 8px 0;
-
     color: #35536c;
-
     font-size: 15px;
-
     border-bottom: 1px solid #eeeeee;
 }
 
-
 .condition-info span {
-
     display: block;
-
     margin-top: 10px;
-
     color: #258b50;
-
     font-size: 15px;
-
     font-weight: 500;
 }
 
@@ -218,27 +602,17 @@
    ======================================== */
 
 .view-more-card {
-
     min-height: 165px;
-
     border: none;
-
     border-radius: 10px;
-
     background: #dcefe6;
-
     color: #258b50;
-
     font-family: inherit;
-
     font-size: 17px;
-
     cursor: pointer;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     gap: 12px;
@@ -248,24 +622,16 @@
         transform 0.25s ease;
 }
 
-
 .view-more-card:hover {
-
     background: #cce5d8;
-
     transform: translateY(-3px);
 }
 
-
 .view-more-card i {
-
-    transition:
-        transform 0.25s ease;
+    transition: transform 0.25s ease;
 }
 
-
 .view-more-card.active i {
-
     transform: rotate(180deg);
 }
 
@@ -275,37 +641,25 @@
    ======================================== */
 
 .extra-condition {
-
     display: none;
 }
 
-
 .extra-condition.show {
-
     display: flex;
-
     animation: conditionAppear 0.35s ease;
 }
-
 
 @keyframes conditionAppear {
 
     from {
-
         opacity: 0;
-
         transform: translateY(15px);
-
     }
 
     to {
-
         opacity: 1;
-
         transform: translateY(0);
-
     }
-
 }
 
 
@@ -314,46 +668,253 @@
    ======================================== */
 
 .explore-conditions {
-
     display: flex;
-
     justify-content: center;
-
     margin-top: 40px;
 }
 
-
 .explore-conditions a {
-
     display: inline-flex;
-
     align-items: center;
-
     justify-content: center;
 
     min-width: 230px;
-
     padding: 15px 25px;
 
     border-radius: 30px;
 
     background: #258b50;
-
     color: white;
 
     font-size: 17px;
-
     text-decoration: none;
 
     transition: 0.25s ease;
 }
 
-
 .explore-conditions a:hover {
-
     background: #1d7041;
-
     transform: translateY(-2px);
+}
+
+
+/* ========================================
+   CARE EXPERIENCE SECTION
+   ======================================== */
+
+.care-experience {
+    background: #102b3a;
+    padding: 90px 8% 100px;
+
+    text-align: center;
+    color: white;
+}
+
+
+/* HEADING */
+
+.care-heading {
+    margin-bottom: 45px;
+}
+
+.care-heading h2 {
+    font-size: 48px;
+    font-weight: 800;
+
+    margin: 0 0 12px;
+
+    letter-spacing: -1px;
+}
+
+.care-heading h1 {
+    font-size: 38px;
+    font-weight: 400;
+
+    margin: 0;
+
+    letter-spacing: 1px;
+}
+
+
+/* ========================================
+   FEATURES BOX
+   ======================================== */
+
+.care-features {
+    max-width: 1100px;
+
+    margin: 0 auto 35px;
+
+    padding: 28px 35px;
+
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    box-sizing: border-box;
+}
+
+
+/* FEATURE */
+
+.care-feature {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+
+    text-align: left;
+}
+
+
+/* ICON */
+
+.care-feature > i {
+    font-size: 32px;
+
+    min-width: 45px;
+
+    text-align: center;
+
+    color: #67e8f9;
+}
+
+
+/* FEATURE CONTENT */
+
+.care-feature h3 {
+    margin: 0 0 5px;
+
+    font-size: 18px;
+    font-weight: 700;
+
+    color: white;
+}
+
+.care-feature p {
+    margin: 0;
+
+    font-size: 13px;
+    line-height: 1.5;
+
+    color: #c8d8df;
+}
+
+
+/* DIVIDER */
+
+.care-divider {
+    width: 1px;
+    height: 65px;
+
+    background: rgba(255, 255, 255, 0.55);
+}
+
+
+/* ========================================
+   DESCRIPTION
+   ======================================== */
+
+.care-description {
+    max-width: 900px;
+
+    margin: 0 auto 40px;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    color: #f1f7fa;
+}
+
+
+/* ========================================
+   BUTTON
+   ======================================== */
+
+.care-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    min-width: 190px;
+
+    padding: 17px 30px;
+
+    border-radius: 35px;
+
+    background: #effcff;
+    color: #102b3a;
+
+    font-size: 17px;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.care-button i {
+    transition: transform 0.3s ease;
+}
+
+.care-button:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+.care-button:hover i {
+    transform: translateX(5px);
+}
+
+
+/* ========================================
+   TABLET
+   ======================================== */
+
+@media (max-width: 900px) {
+
+    .conditions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .care-experience {
+        padding: 70px 5%;
+    }
+
+    .care-heading h2 {
+        font-size: 40px;
+    }
+
+    .care-heading h1 {
+        font-size: 32px;
+    }
+
+    .care-features {
+        padding: 25px 20px;
+        gap: 15px;
+    }
+
+    .care-feature {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .care-feature p {
+        font-size: 12px;
+    }
 }
 
 
@@ -361,68 +922,100 @@
    MOBILE
    ======================================== */
 
-@media (max-width: 900px) {
-
-    .conditions-grid {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
-    }
-
-}
-
-
-@media (max-width: 600px) {
+@media (max-width: 650px) {
 
     .conditions-section {
-
         padding: 50px 20px;
-
     }
-
 
     .conditions-heading h2 {
-
         font-size: 28px;
-
     }
-
 
     .conditions-heading p {
-
         font-size: 16px;
-
     }
-
 
     .conditions-grid {
-
         grid-template-columns: 1fr;
-
         gap: 18px;
-
     }
-
 
     .condition-card {
-
         min-height: 145px;
-
     }
-
 
     .condition-card img {
-
         min-height: 145px;
-
     }
-
 
     .condition-info h3 {
-
         font-size: 18px;
-
     }
 
+
+    /* CARE SECTION */
+
+    .care-experience {
+        padding: 60px 20px 70px;
+    }
+
+    .care-heading {
+        margin-bottom: 30px;
+    }
+
+    .care-heading h2 {
+        font-size: 32px;
+    }
+
+    .care-heading h1 {
+        font-size: 25px;
+    }
+
+    .care-features {
+        flex-direction: column;
+
+        padding: 25px 20px;
+
+        gap: 20px;
+    }
+
+    .care-feature {
+        width: 100%;
+
+        flex-direction: row;
+
+        justify-content: flex-start;
+
+        text-align: left;
+    }
+
+    .care-divider {
+        width: 80%;
+        height: 1px;
+    }
+
+    .care-feature > i {
+        font-size: 27px;
+    }
+
+    .care-feature h3 {
+        font-size: 16px;
+    }
+
+    .care-feature p {
+        font-size: 13px;
+    }
+
+    .care-description {
+        font-size: 15px;
+        line-height: 1.6;
+
+        margin-top: 30px;
+    }
+
+    .care-button {
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
