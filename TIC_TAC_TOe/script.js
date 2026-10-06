@@ -58,7 +58,7 @@ boxes.forEach((box) => {
     disableBoxes()
  }
  const showLost = () => {
-     msg.innerText = "Game Lost"
+     msg.innerText = "Draw, No Winner"
      msgContainer.classList.remove("hide");
     boxes.forEach((box) => box.classList.add("blur-box"));
      disableBoxes()
